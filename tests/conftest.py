@@ -1,5 +1,6 @@
 import pytest
 
+import config
 from tests.test_login import TestLogIn
 from utilities.driver_factory import Driver
 
@@ -20,13 +21,14 @@ def browser(request):
 
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", "--email", "--password" ,action="store", default="chrome" )
+    parser.addoption("--browser", default="chrome")
+    parser.addoption("--email", required=True)
+    parser.addoption("--password", required=True)
 
 
 @pytest.fixture(scope="session", autouse=True)
 def email(request):
     return request.config.getoption("--email")
-
 
 
 @pytest.fixture(scope="session", autouse=True)
