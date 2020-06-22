@@ -22,8 +22,8 @@ def browser(request):
 
 def pytest_addoption(parser):
     parser.addoption("--browser", default="chrome")
-    parser.addoption("--email")
-    parser.addoption("--password")
+    parser.addoption("--email", required=True)
+    parser.addoption("--password", required=True)
 
 
 @pytest.fixture(scope="session", autouse=True)
