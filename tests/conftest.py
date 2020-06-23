@@ -1,11 +1,10 @@
 import pytest
 
 import config
-from tests.test_login import TestLogIn
+from tests.test_login import TestLogin
 from utilities.driver_factory import Driver
 
 d = Driver()  # Created an instance
-loginep = TestLogIn()
 
 
 @pytest.fixture(scope="session")
