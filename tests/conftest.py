@@ -23,6 +23,8 @@ def pytest_addoption(parser):
     parser.addoption("--browser", default="chrome")
     parser.addoption("--email", required=True)
     parser.addoption("--password", required=True)
+    parser.addoption("--logout", required=False)
+
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -33,3 +35,10 @@ def email(request):
 @pytest.fixture(scope="session", autouse=True)
 def password(request):
     return request.config.getoption("--password")
+
+
+@pytest.fixture(scope="session", autouse=True)
+def logout(request):
+    return request.config.getoption("--logout")
+
+
