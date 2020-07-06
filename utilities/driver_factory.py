@@ -28,3 +28,4 @@ class Driver:
 
     def quit_driver(self, driver):
         driver.quit_driver()
+
