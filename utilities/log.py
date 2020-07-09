@@ -1,7 +1,7 @@
 import logging
 
 
-def Testlogs():
+def Testcaseslogs():
     logger = logging.getLogger(__name__)
       #file handler is an other class which needs to be pass in addhandler method
     #filehandler is used for file location
