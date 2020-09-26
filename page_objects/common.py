@@ -37,4 +37,3 @@ class Common:  # class name is always capital
 
     def hoverover_an_object(self, element):
         self.actions.move_to_element(driver.find_element(element).perform())
-

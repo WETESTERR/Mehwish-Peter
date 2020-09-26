@@ -11,7 +11,7 @@ import config
 class Driver:
     def launch_url(self, browser):
         driver = None
-        browser_lower = browser.lower() #lower() is a methodwhch
+        browser_lower = browser.lower()  # lower() is a methodwhch
         if browser_lower == "chrome":
             driver = webdriver.Chrome(ChromeDriverManager().install())
         elif browser_lower == "firefox":
