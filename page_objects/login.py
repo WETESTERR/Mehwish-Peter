@@ -10,16 +10,21 @@ class Login(Common):
 
     email_textbox = "email"
     password_textbox = "password"
-    signIn_tab = driver.find_element_by_class_name("login").click()
-    submit = driver.find_element_by_id("SubmitLogin")
-    logout_button = (By.CLASS_NAME, "logout")
+    sign_in_button = "login"
+    sign_in_submit_button = "SubmitLogin"
+    sign_out_button = "logout"
+
+##Verufy the locators id, class or classname
 
     def login(self, email, password):
-        self.clicking(Login.email_textbox)
-        self.driver.find_element_by_class_name("login").click()
-        self.driver.find_element_by_id(Login.email_textbox).send_keys(email)
-        self.driver.find_element_by_id(Login.password_textbox).send_keys(password)
-        self.submit.click()
+        self.click(Login.sign_in_button,"id")
+        self.enter_text(Login.email_textbox,"id",email)
+        self.enter_text(Login.password_textbox , "",password)
+        self.click(Login.sign_in_submit_button,"")
+        self.verify_element_present(Login.sign_out_button,"")
+        #Put successful Login logs
 
     def logout(self):
-        self.logout_button.click()
+        self.click(Login.sign_out_button,"")
+        self.verify_element_present(Login.sign_in_button,"")
+        #Successful Logout logs

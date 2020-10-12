@@ -15,7 +15,7 @@ class ReadFile:
     # 19-22Lines are not neccessary and can be commented out and can be use for debugging
 
 
-r = ReadFile()
-sample = r.json_reader("Testings.json")
-sample1 = r.json_reader("sample.json")
-print(sample, sample1)
+# #r = ReadFile()
+# sample = r.json_reader("Testings.json")
+# sample1 = r.json_reader("sample.json")
+# print(sample, sample1)
